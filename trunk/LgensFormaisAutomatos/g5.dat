@@ -1,0 +1,11 @@
+{A,B,C}
+{a,b,c}
+{A->BABAB
+B->î
+B->b
+A->CAC
+C->B
+C->c
+A->a}
+A
+

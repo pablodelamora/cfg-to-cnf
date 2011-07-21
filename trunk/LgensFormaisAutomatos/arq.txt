@@ -1,0 +1,6 @@
+{A, B, S}
+{a, b, i}
+{S=>ASA|aB
+A=>B|S
+B=>b|i}
+S

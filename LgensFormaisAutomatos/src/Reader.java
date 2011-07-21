@@ -7,17 +7,19 @@ public class Reader {
 
     public static void main(String args[]) {
 
+        Variable v = new Variable();
+
         try {
 
-            BufferedReader in = new BufferedReader(new FileReader("g2.dat"));
+            BufferedReader in = new BufferedReader(new FileReader("g1.dat"));
             String s;
+            String aux;
             while ((s = in.readLine()) != null) {
                 int l = s.length();
-                //int j = s.indexOf("{");
-                //int k = s.indexOf("}");
-                //System.out.println(j + " " + k);
                 for (int i = 0; i < l; i++) {
-                    System.out.println(s.substring(i, i + 1));
+                    aux = s.substring(i, i + 1);
+                    //System.out.println(aux);
+                    //System.out.println(v.verifyString(aux));
                 }
                 //System.out.println("End of line");
             }

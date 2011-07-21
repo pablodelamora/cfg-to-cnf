@@ -12,7 +12,7 @@ public class Variable {
 
     private String str;
 
-    private boolean verifyString (String str) {
+    public boolean verifyString (String str) {
         this.str = str;
         for (String var : variables) {
             if (str.equals(var)) {

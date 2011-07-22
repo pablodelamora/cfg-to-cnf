@@ -1,31 +1,59 @@
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.LineNumberReader;
 
 public class Reader {
 
-    public static void main(String args[]) {
+    private int lineNumber;
 
-        Variable v = new Variable();
+    public int getNumberOfLines() throws FileNotFoundException, IOException {
+        File file = new File("g1.dat");
+        LineNumberReader line = new LineNumberReader(new FileReader(file));
+        line.skip(file.length());
+        return line.getLineNumber();
+    }
 
+    public String getLine(int lineNumber) {
+        this.lineNumber = lineNumber;
+        String line = null;
         try {
-
             BufferedReader in = new BufferedReader(new FileReader("g1.dat"));
-            String s;
-            String aux;
-            while ((s = in.readLine()) != null) {
-                int l = s.length();
-                for (int i = 0; i < l; i++) {
-                    aux = s.substring(i, i + 1);
-                    //System.out.println(aux);
-                    //System.out.println(v.verifyString(aux));
-                }
-                //System.out.println("End of line");
+            while (line != null) {
+                line = in.readLine();
+                return line;
             }
             in.close();
         } catch (IOException e) {
         }
+        return null;
+    }
+
+    public static void main(String args[]) throws FileNotFoundException, IOException {
+
+        Variable v = new Variable();
+        Reader reader = new Reader();
+        System.out.println(reader.getNumberOfLines());
+//
+//        try {
+//            BufferedReader in = new BufferedReader(new FileReader("g1.dat"));
+//            String line;
+//            String aux;
+//            while ((line = in.readLine()) != null) {
+//                int l = line.length();
+//                for (int i = 0; i < l; i++) {
+//                    aux = line.substring(i, i + 1);
+//                    if (aux.equals(">")) {
+//                    }
+//                }
+//                //System.out.println("End of line");
+//            }
+//            in.close();
+//        } catch (IOException e) {
+//        }
         // System.exit(0);
     }
 }

@@ -1,11 +1,11 @@
 
-public class Variable {
+public class Symbol {
 
-    //possible variables
+    //Array of possible variables
     private String[] variables = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
                                   "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
-    //possible terminals
+    //Array of possible terminals
     private String[] terminals = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
                                   "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
                                   "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
@@ -24,7 +24,7 @@ public class Variable {
 
     public static void main(String args[]) {
         String str = "Z";
-        Variable v = new Variable();
+        Symbol v = new Symbol();
         System.out.println(v.verifyString(str));
     }
 }

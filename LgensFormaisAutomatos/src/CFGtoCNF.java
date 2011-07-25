@@ -4,6 +4,7 @@ public class CFGtoCNF {
     Reader reader = new Reader();
 
     private void stepOne() {
+        reader.setFirstVariable();
 
     }
 

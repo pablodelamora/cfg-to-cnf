@@ -13,10 +13,13 @@ public class Unica {
         String firstVariable = "A'";
         String oldFirstVariable = "A";
         int lineNumber = 1;
+        //
+        String var;
 
         BufferedReader in = new BufferedReader(new FileReader("g1.dat"));
         BufferedWriter out = new BufferedWriter(new FileWriter("g1s.dat"));
         String line;
+        //step one
         while ((line = in.readLine()) != null) {
             if (line.length() == 1) {
                 out.write("\r\n" + firstVariable);
@@ -33,5 +36,15 @@ public class Unica {
             lineNumber++;
         }
         out.close();
+        //step two
+
+        BufferedReader in2 = new BufferedReader(new FileReader("g1s.dat"));
+        while ((line = in2.readLine()) != null) {
+            if (line.indexOf("î") != -1) {
+                var = line.substring(0, 1);
+                System.out.println(var);
+            }
+        }
+        //step three
     }
 }

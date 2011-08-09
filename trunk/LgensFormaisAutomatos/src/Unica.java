@@ -15,6 +15,8 @@ public class Unica {
         int lineNumber = 1;
         //
         String var;
+        //String var;
+        String sub;
 
         BufferedReader in = new BufferedReader(new FileReader("g1.dat"));
         BufferedWriter out = new BufferedWriter(new FileWriter("g1s.dat"));
@@ -40,9 +42,16 @@ public class Unica {
 
         BufferedReader in2 = new BufferedReader(new FileReader("g1s.dat"));
         while ((line = in2.readLine()) != null) {
-            if (line.indexOf("î") != -1) {
+            if ((line.indexOf("î") != -1) || (line.indexOf("�") != -1)) {
                 var = line.substring(0, 1);
-                System.out.println(var);
+                sub = var + "->";
+                if (line.indexOf(sub) != -1) {
+                    BufferedReader in3 = new BufferedReader(new FileReader("g1s.dat"));
+                    while ((line = in3.readLine()) != null) {
+                        //System.out.println(line);
+                        
+                    }
+                }
             }
         }
         //step three

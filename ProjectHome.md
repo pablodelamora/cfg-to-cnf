@@ -1,0 +1,1 @@
+Algorithm of conversion from CFG (context-free grammar) to CNF (chomsky normal form) with Java.
